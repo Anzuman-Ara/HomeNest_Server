@@ -1,1 +1,1 @@
-{"version": 2, "builds": [{"src": "index.js", "use": "@vercel/node"}], "routes": [{"src": "/(.*)", "dest": "index.js", "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]}], "env": {"FB_SERVICE_KEY": "@fb_service_key", "MONGODB_URI": "@mongodb_uri"}}
+{"version": 2, "builds": [{"src": "index.js", "use": "@vercel/node"}], "routes": [{"src": "/(.*)", "dest": "index.js", "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]}]}
