@@ -5,8 +5,18 @@ require('dotenv').config();
 
 const app = express();
 
-// Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI)
+// MongoDB connection configuration
+const mongoOptions = {
+  serverSelectionTimeoutMS: 30000, // 30 seconds (increase from default 10s)
+  socketTimeoutMS: 45000, // 45 seconds
+  maxPoolSize: 10, // Maintain up to 10 socket connections
+  serverSelectionTimeoutMS: 30000, // Keep trying to send operations for 30 seconds
+  socketTimeoutMS: 0, // Never time out, wait indefinitely
+  bufferMaxEntries: 0 // Disable mongoose buffering
+};
+
+// Connect to MongoDB with enhanced options
+mongoose.connect(process.env.MONGODB_URI, mongoOptions)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log('MongoDB connection error:', err));
 
