@@ -9,7 +9,7 @@ const app = express();
 const mongoOptions = {
   serverSelectionTimeoutMS: 60000, // 60 seconds 
   socketTimeoutMS: 60000, // 60 seconds for socket operations
-  maxPoolSize: 5, // Reduce connection pool size
+  maxPoolSize: 11, // Reduce connection pool size
   maxIdleTimeMS: 30000, // 30 seconds
   retryWrites: true,
   w: 'majority'
