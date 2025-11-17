@@ -27,7 +27,6 @@ const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:5174',
   process.env.CLIENT_URL,
-  'https://your-domain.com',
 ].filter(Boolean);
 
 // Enhanced CORS configuration for production
