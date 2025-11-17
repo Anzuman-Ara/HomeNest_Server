@@ -30,8 +30,6 @@ const allowedOrigins = [
   'https://localhost:4173',
   process.env.CLIENT_URL,
   'https://your-domain.com',
-  // Add explicit Vercel deployment URL
-  'https://server-v2x5so750-sayeda-anzuman-aras-projects.vercel.app',
 ].filter(Boolean);
 
 // Enhanced CORS configuration for production
