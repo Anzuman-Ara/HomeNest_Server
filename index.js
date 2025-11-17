@@ -5,14 +5,14 @@ require('dotenv').config();
 
 const app = express();
 
-// MongoDB connection configuration
+// MongoDB connection configuration - Enhanced for Atlas free tier
 const mongoOptions = {
-  serverSelectionTimeoutMS: 30000, // 30 seconds (increase from default 10s)
-  socketTimeoutMS: 45000, // 45 seconds
-  maxPoolSize: 10, // Maintain up to 10 socket connections
-  serverSelectionTimeoutMS: 30000, // Keep trying to send operations for 30 seconds
-  socketTimeoutMS: 0, // Never time out, wait indefinitely
-  bufferMaxEntries: 0 // Disable mongoose buffering
+  serverSelectionTimeoutMS: 60000, // 60 seconds 
+  socketTimeoutMS: 60000, // 60 seconds for socket operations
+  maxPoolSize: 5, // Reduce connection pool size
+  maxIdleTimeMS: 30000, // 30 seconds
+  retryWrites: true,
+  w: 'majority'
 };
 
 // Connect to MongoDB with enhanced options
