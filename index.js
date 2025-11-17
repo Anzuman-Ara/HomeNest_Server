@@ -9,7 +9,7 @@ const app = express();
 const mongoOptions = {
   serverSelectionTimeoutMS: 60000, // 60 seconds 
   socketTimeoutMS: 60000, // 60 seconds for socket operations
-  maxPoolSize: 11, // pool size
+  maxPoolSize: 15, // pool size
   maxIdleTimeMS: 30000, // 30 seconds
   retryWrites: true,
   w: 'majority'
@@ -26,8 +26,6 @@ const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:5173',
   'http://localhost:5174',
-  'http://localhost:4173/',
-  'https://localhost:4173',
   process.env.CLIENT_URL,
   'https://your-domain.com',
 ].filter(Boolean);
