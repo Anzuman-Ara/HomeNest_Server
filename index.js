@@ -20,16 +20,8 @@ mongoose.connect(process.env.MONGODB_URI, mongoOptions)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log('MongoDB connection error:', err));
 
-// Middleware
-app.use(cors({
-  origin: [
-    'http://localhost:4173', // Vite preview
-    'http://localhost:5173', // Vite dev
-    'https://homenest-9e92c.web.app', // Firebase hosting
-    /\.vercel\.app$/ // Any Vercel deployment
-  ],
-  credentials: true
-}));
+// Middleware - Simplified CORS configuration for development
+app.use(cors());
 app.use(express.json());
 
 // Routes
